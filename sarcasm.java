@@ -1,22 +1,43 @@
 import java.util.Scanner;
 
+/**
+ * This is a program that takes in a String using Java's Scanner, 
+ * and returns a new String with every other letter turned into 
+ * an uppercase character. 
+ */
 class Sarcasm {
     public static void main(String[] args) {
+        //create a new Scanner object
         Scanner s = new Scanner(System.in);
-        
-        while (true) {
-            String out = ""; 
-            System.out.print("Enter a message: ");
-            String in = s.nextLine();
 
+        /**
+         * in is the String we are taking in from the user
+         * out is the sarcasmified String we are returning to the user
+         */
+        String in, out;
+        
+        //runs until the user exits the program
+        //currently can only exit using Ctrl + C
+        while (true) {
+            //initializing the string we are returning to an empty String
+            out = ""; 
+            System.out.print("Enter a message: ");
+            in = s.nextLine();
+
+            //for loop, running in.length number of times
             for (int i = 0; i < in.length(); i++) {
+                //if the character is at an even index, append it to out
                 if (i % 2 == 0) {
                     out += in.charAt(i);
                 }
+                //if the character is at an odd index, make it uppercase 
+                //and append it to out
                 else {
                     out += Character.toUpperCase(in.charAt(i));
                 }
             }
+
+            //pring the sarcasmified String to the user
             System.out.println("Sarcasmified: " + out);
         }
     }
