@@ -32,6 +32,7 @@ class Sarcasm {
 
             //check if the user has entered the exit phrase
             if (in.equals("exit")) {
+                s.close();
                 break;
             }
 
