@@ -21,8 +21,19 @@ class Sarcasm {
         while (true) {
             //initializing the string we are returning to an empty String
             out = ""; 
+            System.out.println("If you would like to exit the program, please enter 'exit'");
+
+            //get user input
             System.out.print("Enter a message: ");
             in = s.nextLine();
+
+            //clean up the String, removing leading and trailing spaces
+            in.trim();
+
+            //check if the user has entered the exit phrase
+            if (in.equals("exit")) {
+                break;
+            }
 
             //for loop, running in.length number of times
             for (int i = 0; i < in.length(); i++) {
@@ -38,7 +49,7 @@ class Sarcasm {
             }
 
             //pring the sarcasmified String to the user
-            System.out.println("Sarcasmified: " + out);
+            System.out.println("Sarcasmified: " + out + "\n");
         }
     }
 }
